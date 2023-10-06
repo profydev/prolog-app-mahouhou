@@ -138,4 +138,10 @@
   @media (min-width: breakpoint.$desktop) {
     display: flex;
   }
+
+  &.isCollapsed {
+    button img {
+      transform: rotate(180deg);
+    }
+  }
 }
