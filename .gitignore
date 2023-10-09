@@ -44,3 +44,6 @@ yarn-error.log*
 
 # Cypress test videos
 cypress/videos/
+
+# Prettier
+.gitignore
