@@ -5,21 +5,21 @@ const packageJson = require("../package.json");
 
 let envConfig;
 
-// Check if the environment variable exists
-if (process.env.NEXT_PUBLIC_APP_VERSION) {
-  // If it does, use it directly
-  envConfig = process.env;
-} else {
-  // If it doesn't, read the variables from the .env.local file
+// Check if .env.local file exists
+if (fs.existsSync(".env.local")) {
+  // If it does, read the variables from the .env.local file
   dotenv.config();
   envConfig = dotenv.parse(fs.readFileSync(".env.local"));
+} else {
+  // If it doesn't, use process.env directly
+  envConfig = process.env;
 }
 
 // Update version number
 envConfig["NEXT_PUBLIC_APP_VERSION"] = packageJson.version;
 
-// Convert back to string format and write back to file only if it's not in the GitHub Actions environment
-if (!process.env.NEXT_PUBLIC_APP_VERSION) {
+// Convert back to string format and write back to file only if .env.local file exists
+if (fs.existsSync(".env.local")) {
   let envConfigStr = "";
   for (let key in envConfig) {
     if (key === "NEXT_PUBLIC_APP_VERSION") {
