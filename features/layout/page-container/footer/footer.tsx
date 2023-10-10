@@ -11,7 +11,10 @@ const menuItems = [
 export function Footer() {
   return (
     <footer className={styles.footer}>
-      <span className={styles.version}>
+      <span
+        className={styles.version}
+        data-version={process.env.NEXT_PUBLIC_APP_VERSION}
+      >
         Version: {process.env.NEXT_PUBLIC_APP_VERSION}
       </span>
       <ul className={styles.list}>
