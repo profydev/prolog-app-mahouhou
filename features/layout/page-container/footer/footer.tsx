@@ -11,7 +11,9 @@ const menuItems = [
 export function Footer() {
   return (
     <footer className={styles.footer}>
-      <span className={styles.version}>Version: 14.5.1</span>
+      <span className={styles.version}>
+        Version: {process.env.NEXT_PUBLIC_APP_VERSION}
+      </span>
       <ul className={styles.list}>
         {menuItems.map((item, index) => (
           <li key={index}>
