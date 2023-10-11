@@ -24,7 +24,7 @@ export function ProjectList() {
     console.error(error);
     return (
       <Alert
-        message={error.message}
+        message="There was a problem loading the project data"
         alertType="error"
         onButtonClick={refetch}
       />

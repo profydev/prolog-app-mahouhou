@@ -26,6 +26,7 @@
   display: flex;
   align-items: center;
   margin-left: space.$s3;
+  min-width: calc(4.4375rem + 20px);
 
   & > img {
     margin-left: space.$s2;
