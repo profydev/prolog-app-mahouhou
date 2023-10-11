@@ -29,6 +29,6 @@ describe("Footer", () => {
       .should("have.attr", "src", "/icons/logo-small.svg");
 
     //check for version number
-    cy.get("footer").find("span").should("have.attr", "data-version");
+    cy.get("footer").find("span").contains("14.5.2");
   });
 });
