@@ -1,0 +1,42 @@
+@use "@styles/color";
+@use "@styles/font";
+@use "@styles/space";
+
+#error {
+  border-color: color.$error-300;
+  background-color: color.$error-25;
+}
+
+.alert {
+  padding: space.$s4;
+  border: 1px solid currentcolor;
+  border-radius: space.$s2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#error,
+.button {
+  color: color.$error-700;
+  font: font.$text-sm-medium;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  margin-left: space.$s3;
+
+  & > img {
+    margin-left: space.$s2;
+  }
+}
+
+.message {
+  display: flex;
+  align-items: center;
+
+  & > img {
+    margin-right: space.$s3;
+  }
+}
