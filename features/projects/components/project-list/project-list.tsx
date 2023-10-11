@@ -6,7 +6,17 @@ export function ProjectList() {
   const { data, isLoading, isError, error } = useGetProjects();
 
   if (isLoading) {
-    return <div>Loading</div>;
+    return (
+      <div className={styles.loadingWrapper} data-testid="loading-spinner">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/icons/loading-circle.svg"
+          alt="Loading"
+          width="64"
+          height="64"
+        />
+      </div>
+    );
   }
 
   if (isError) {

@@ -15,3 +15,26 @@
     grid-template-columns: repeat(auto-fit, 400px);
   }
 }
+
+.loadingWrapper {
+  min-height: 300px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: space.$s6 space.$s3 0 space.$s3;
+
+  @media (min-width: breakpoint.$desktop) {
+    padding: 0;
+  }
+
+  & > img {
+    animation: spin 1s linear infinite;
+  }
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
