@@ -26,7 +26,7 @@ export function ProjectList() {
       <Alert
         message="There was a problem loading the project data"
         alertType="error"
-        onButtonClick={refetch}
+        refetch={refetch}
       />
     );
   }
